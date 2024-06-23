@@ -1,0 +1,513 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    Alphaglobe Affiliate
+{% endblock %}
+{% block main %}
+  
+
+                <div class="nk-content ">
+        <div class="container-fluid">
+            <div class="nk-content-inner">
+                <div class="nk-content-body">
+                    <div class="components-preview wide-md mx-auto">
+                        <div class="nk-block-head nk-block-head-lg wide-sm">
+                            <div class="nk-block-head-content">
+                                <div class="nk-block-head-sub"><a class="back-to" href="https://alphaglobe.org/dashboard"><i class="bi-arrow-left-short"></i><span>Dashboard</span></a></div>
+                                <h2 class="nk-block-title fw-normal">{{ type|capitalize }} Plans</h2>
+                                <p>You can choose to invest in any plan . Kindly note that tax and all related fees has been added automatically to the minimum investment amount. You do not have to bother about paying them separately.</p>
+                                <div class="nk-block-des">
+                                    <p class="lead"></p>
+                                </div>
+                            </div>
+                        </div><!-- .nk-block -->
+    <div>
+    </div>	<div>
+    </div>                        <div class="row">
+                            <div class="col-lg-8">
+            <div>
+    </div>	        <div>
+    </div>            <div class="card ">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <form action="javascript:;" method="post" id="submitpaymentform">
+                                <input type="hidden" name="_token" value="AqPdnPYOd5i6wCux1F6taYD8w1QykLpdpNm50bxF">  
+                                <input type="hidden" name="type" value={{type}}>                                <input type="hidden" name="s" value="22222222222">
+                                <div class="row">
+                                      <div class="mb-4 col-md-12">
+                                        <h5 class="card-title ">Select Plan:</h5>
+
+
+
+
+
+
+
+
+
+ 
+                                        <div class="cart" style="border-bottom: 1px solid #d7d5d5;">
+                                            <input type="radio" name="plan" value="1" checked="">
+                                        <span>BASIC </span>
+                                            <p><small>
+  Profit 1.5% weekly For 1 Months<br>
+Minimum Deposit 5000 ;  Maximum Deposit 10000
+</small></p>
+                                            
+                                        </div><br>
+ 
+                                        <div class="cart" style="border-bottom: 1px solid #d7d5d5;">
+                                            <input type="radio" name="plan" value="2">
+                                        <span>PROFESSIONAL </span>
+                                            <p><small>
+  Profit 2.5% weekly For 1 Months<br>
+Minimum Deposit 10000 ;  Maximum Deposit 49999
+</small></p>
+                                            
+                                        </div><br>
+ 
+                                        <div class="cart" style="border-bottom: 1px solid #d7d5d5;">
+                                            <input type="radio" name="plan" value="3">
+                                        <span>GOLD PLAN </span>
+                                            <p><small>
+  Profit 3.5% weekly For 1 Months<br>
+Minimum Deposit 50000 ;  Maximum Deposit 99999
+</small></p>
+                                            
+                                        </div><br>
+ 
+                                        <div class="cart" style="border-bottom: 1px solid #d7d5d5;">
+                                            <input type="radio" name="plan" value="4">
+                                        <span>PLATINUM </span>
+                                            <p><small>
+  Profit 5% weekly For 1 Months<br>
+Minimum Deposit 100000 ;  Maximum Deposit 10000000
+</small></p>
+                                            
+                                        </div><br>
+ 
+<!-- 
+
+  <div class="cart" style="border-bottom: 1px solid #d7d5d5;">
+                                            <input type="radio" name="plan" value="100" checked>
+                                            <span>100$ PREMIUM PLAN </span>
+                                            <p><small>Maximum investment is $9,999
+Daily payout is 3.5% profit
+Contract period is 5-days
+Asset protection
+Online support</small></p>
+                                            
+                                        </div>
+
+
+
+
+
+
+
+
+
+                                        
+                                        <div class="cart" style="border-bottom: 1px solid #d7d5d5;">
+                                            <input type="radio" name="plan" value="10000">
+                                            <span>10,000$ STANDARD PLAN </span>
+                                            <p><small>Maximum investment is $19,999
+Daily payout is 5.5% profit
+Contract period is 5-days
+Asset protection
+Online support</small></p>
+                                            
+                                        </div>
+                                        
+                                        <div class="cart" style="border-bottom: 1px solid #d7d5d5;">
+                                            <input type="radio" name="plan" value="20000">
+                                           
+                                            <span>20,000$ PROFESSIONAL PLAN</span>
+<p> <small>Maximum investment is $100,000
+Daily payout is 7.5% profit
+Contract period is Long Term
+Asset protection
+Online support</small></p>
+                                            
+                                        </div>
+                                        
+                                      
+                                        
+                                        <div class="cart" style="border-bottom: 1px solid #d7d5d5;">
+                                            <input type="radio" name="plan" value="100000">
+                                            <span>100,000$ ULTIMATE PLAN </span>
+                                            <p><small>Maximum investment is $1,000,000
+Daily payout is 25% profit
+Contract period is Long Term
+Asset protection
+Online support</small></p>
+                                            
+                                        </div>
+
+                                        
+                                        <div class="cart" style="border-bottom: 1px solid #d7d5d5;">
+                                            <input type="radio" name="plan" value="12">
+                                            <span>100$ TEST </span>
+                                            <p><small>Daily payout is 30% profit
+Asset protection
+Online support</small></p>
+                                            
+                                        </div>
+
+
+ -->
+
+
+                                    </div>
+
+
+
+
+                                    <div class="mb-4 col-md-12">
+                                        <h5 class="card-title ">Enter Amount</h5>
+                                        <input class="form-control " placeholder="Enter Amount" min="50" type="number" name="amount" required="">
+                                    </div>
+                                    <div class="mb-4 col-md-12">
+                                        <input type="hidden" name="payment_method" id="paymethod">
+                                    </div>
+                                    <div class="mt-2 mb-1 col-md-12">
+                                        <h5 class="card-title ">Choose Payment Method from the list below</h5>
+                                    </div>
+                                                                            <div class="mb-2 col-md-6">
+                                            <a style="cursor: pointer;" data-method="Bitcoin" id="1" class="text-decoration-none" onclick="checkpamethd(this.id)">
+                                                <div class="rounded shadow ">
+                                                    <div class="card-body d-flex justify-content-between align-items-center">
+                                                        <span class="">
+                                                                                                                            <img src="data:image/png;base64,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" alt="" class="" style="width: 25px;">
+                                                                                                                        Bitcoin
+                                                        </span>
+                                                        <span>
+                                                            <input type="checkbox" id="1customCheck1" readonly="">
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                                                            <div class="mb-2 col-md-6">
+                                            <a style="cursor: pointer;" data-method="Ethereum" id="2" class="text-decoration-none" onclick="checkpamethd(this.id)">
+                                                <div class="rounded shadow ">
+                                                    <div class="card-body d-flex justify-content-between align-items-center">
+                                                        <span class="">
+                                                                                                                        Ethereum
+                                                        </span>
+                                                        <span>
+                                                            <input type="checkbox" id="2customCheck1" readonly="">
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                                                            <div class="mb-2 col-md-6">
+                                            <a style="cursor: pointer;" data-method="USDT" id="3" class="text-decoration-none" onclick="checkpamethd(this.id)">
+                                                <div class="rounded shadow ">
+                                                    <div class="card-body d-flex justify-content-between align-items-center">
+                                                        <span class="">
+                                                                                                                        USDT
+                                                        </span>
+                                                        <span>
+                                                            <input type="checkbox" id="17customCheck1" readonly="">
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                                                                                                <div class="mt-2 mb-1 col-md-12">
+                                            <input type="submit" class="px-5 btn btn-primary btn-lg" value="Procced to Payment">
+                                        </div>
+                                        <input type="hidden" id="lastchosen" value="0">
+                                                                    </div>
+                            </form>
+                        </div>
+                        <div class="mt-4 col-md-4">
+                            <!-- Seller -->
+                            <div class="card">
+                                <div class="card-footer">
+                                    <div class="actions d-flex justify-content-between">
+                                        <a href="https://alphaglobe.org/dashboard/depo" class="action-item">
+                                            <span class="btn-inner--icon">View deposit history</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                            </div>
+                        </div>
+
+                    </div><!-- .components-preview -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function getPlan() {
+            let category = $("#category").val();
+            let name = $("#plan").val();
+            $.ajax({
+                url: "https://greenvilleglobes.com/asset/fire/get-plan",
+                type: 'GET',
+                data: {name:name, category:category},
+            }).done(function( res ) {
+                $('#percentage').val((res.data.percentage)+'%')
+                $('#minimum').val('$ '+(res.data.minimum))
+                $('#maximum').val('$ '+(res.data.maximum))
+                $('#duration').val(Math.round(res.data.duration)+' day(s)')
+                $('#amount').val('')
+                $('#profit').val('$0')
+                $('#total').val('$0')
+            }).fail(function() {
+
+            });
+        }
+    </script>
+
+    <script>
+        function calculate(){
+            let capital = $('#amount').val().replace(/[^\w\s]/gi, '')
+            let interest = $('#percentage').val().replace(/[&\/\#,a-z+()$~%'":*?<>{}]/g, '')
+            let duration = $('#duration').val().match(/(\d+)/);
+            let percentage = interest/100
+            let profit = percentage * capital
+            let total = +profit + +capital
+            $('#profit').val('$'+Number(profit).toLocaleString('en'))
+            $('#total').val('$'+Number(total).toLocaleString('en'))
+        }
+    </script>
+
+    <script>
+        $('#amount').keyup(function(event) {
+            // skip for arrow keys
+            if(event.which >= 37 && event.which <= 40) return;
+            // format number
+            $(this).val(function(index, value) {
+                return value
+                    .replace(/\D/g, "")
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+            });
+        });
+    </script>
+            <!-- content @e    -->
+        </div>
+        <!-- wrap @e    -->
+    </div>
+    <!-- main @e    -->
+</div>
+
+<!-- app-root @e    -->
+<!-- JavaScript -->
+<script src={{ asset("dashboard/bundle.js.download") }}></script>
+<script src={{ asset("dashboard/scripts.js.download") }}></script>
+<script src={{ asset("dashboard/chart-ecommerce.js.download") }}></script>
+
+
+
+
+
+
+
+
+    <script type="text/javascript" src={{ asset("dashboard/saved_resource") }}></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="AqPdnPYOd5i6wCux1F6taYD8w1QykLpdpNm50bxF">
+    <title>Alphaglobe | </title>
+            <link rel="icon" href="https://alphaglobe.org/storage/app/public/photos/qrizBj5hVrpNXvgikD9Lk6RMnsf792HfJUpFqXNa.png" type="image/png">
+        <!-- Font Awesome 5 -->
+        <link rel="stylesheet" href={{ asset("dashboard/all.min.css") }}>
+        <!-- Page CSS -->
+        <link rel="stylesheet" href={{ asset("dashboard/fullcalendar.min.css") }}>
+        <!-- Purpose CSS -->
+        <link rel="stylesheet" href={{ asset("dashboard/purpose.css") }} id="stylesheet">
+        <link rel="stylesheet" href={{ asset("dashboard/animate.min.css") }}>
+        <link rel="stylesheet" href={{ asset("dashboard/sweetalert2.min.css") }}>
+        <script src={{ asset("dashboard/sweetalert.min.js.download") }}></script>
+        <link rel="stylesheet" type="text/css" href={{ asset("dashboard/datatables.min.css") }}>
+        <link rel="stylesheet" href={{ asset("dashboard/buttons.dataTables.min.css") }}>
+        <!-- Bootstrap Notify -->
+        <script src={{ asset("dashboard/bootstrap-notify.min.js.download") }}></script>
+        <script src={{ asset("dashboard/alpine.min.js.download") }} defer=""></script>
+        <link href={{ asset("dashboard/select2.min.css") }} rel="stylesheet">
+        <script src={{ asset("dashboard/select2.min.js.download") }}></script>
+
+        <style>[wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid], [wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short], [wire\:loading\.delay\.long], [wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest] {display:none;}[wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {animation-duration: 50000s;animation-name: livewireautofill;}@keyframes livewireautofill { from {} }</style>
+   
+
+
+
+
+
+    <!-- Application container -->
+    <div class="container-fluid container-application" style="background-color: #293145 !important;">
+        
+        <!-- Content -->
+        <div class="main-content position-relative">
+            <!-- Main nav -->
+
+            <!-- Page content -->
+            <div class="page-content">
+                            </div>
+            <!-- Footer -->
+            <div class="pt-5 pb-4 footer footer-light sticky-bottom" id="footer-main">
+                <div class="text-center row text-sm-left align-items-sm-center">
+                    <div class="col-sm-6">
+                    </div>
+                </div>
+            </div>
+        <div class="sidenav-mask mask-body d-xl-none" data-action="sidenav-unpin" data-target="undefined"></div></div>
+    </div>
+    
+
+    <script type="text/javascript" src={{ asset("dashboard/element.js.download") }}>
+    </script>
+    <script src={{ asset("dashboard/livewire.js.download") }} data-turbo-eval="false" data-turbolinks-eval="false"></script><script data-turbo-eval="false" data-turbolinks-eval="false">window.livewire = new Livewire();window.Livewire = window.livewire;window.livewire_app_url = '';window.livewire_token = 'AqPdnPYOd5i6wCux1F6taYD8w1QykLpdpNm50bxF';window.deferLoadingAlpine = function (callback) {window.addEventListener('livewire:load', function () {callback();});};let started = false;window.addEventListener('alpine:initializing', function () {if (! started) {window.livewire.start();started = true;}});document.addEventListener("DOMContentLoaded", function () {if (! started) {window.livewire.start();started = true;}});</script>
+                    <!-- Scripts -->
+        <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
+        
+        <script src={{ asset("dashboard/progressbar.min.js.download") }}></script>
+        <script src={{ asset("dashboard/apexcharts.min.js.download") }}></script>
+        <script src={{ asset("dashboard/moment.min.js.download") }}></script>
+        <script src={{ asset("dashboard/fullcalendar.min.js.download") }}></script>
+        <script src={{ asset("dashboard/sweetalert.min.js.download") }}></script>
+        <!-- Purpose JS -->
+        <script src={{ asset("dashboard/purpose.js.download") }}></script>
+        <!-- Bootstrap Notify -->
+        <script src={{ asset("dashboard/bootstrap-notify.min.js.download") }}></script>
+        
+        
+       
+        <script src={{ asset("dashboard/custom.js.download") }}></script>
+        <script type="text/javascript" src={{ asset("dashboard/datatables.min.js.download") }}>
+        </script>
+            <script src={{ asset("dashboard/jquery-3.6.0.min.js.download") }} integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <!-- Bootstrap Notify -->
+        <script src={{ asset("dashboard/bootstrap-notify.min.js.download") }}></script>
+
+        <script>
+    let paymethod = document.querySelector('#paymethod');
+    var lastchosen = document.getElementById('lastchosen')
+
+    function checkpamethd(id){
+            paymethod.value = id;
+            var paymentchosed = id;
+            var last = lastchosen.value;
+           
+            if (id === lastchosen.value) {
+                document.getElementById(paymentchosed).checked = true;
+                lastchosen.value = id;
+            }else{
+                if (lastchosen.value == 0) {
+                    document.getElementById(paymentchosed).checked = true;
+                    lastchosen.value = id;
+                }else{
+                    document.getElementById(last).checked = false;
+                    document.getElementById(paymentchosed).checked = true;
+                    lastchosen.value = id;
+                }
+            }
+            
+            let met;
+            switch (id) {
+    case "1":
+        met = "Bitcoin";
+        break;
+    case "2":
+        met = "Ethereum";
+        break;
+    case "3":
+        met = "USDT(trc20)";
+        break;
+    
+    default:
+        met = "USDT(trc20)";
+        break;
+}
+            
+            
+            
+            $.notify({
+                // options
+                icon: 'flaticon-alarm-1',
+                title: '',
+                message: 'you have chosen to pay with ' + ' ' + met,
+            },{
+                // settings
+                type: 'success',
+                allow_dismiss: true,
+                newest_on_top: false,
+                placement: {
+                    from: "top",
+                    align: "right"
+                },
+                offset: 20,
+                spacing: 10,
+                z_index: 1031,
+                delay: 5000,
+                timer: 1000,
+                animate: {
+                    enter: 'animated fadeInDown',
+                    exit: 'animated fadeOutUp'
+                },
+
+            });
+    }
+    $('#submitpaymentform').on('submit', function() {
+        //alert('love');
+        if (paymethod.value == "") {
+            $.notify({
+                // options
+                icon: 'flaticon-alarm-1',
+                title: '',
+                message: 'Please choose a payment method by clicking on it',
+            },{
+                // settings
+                type: 'danger',
+                allow_dismiss: true,
+                newest_on_top: false,
+                placement: {
+                    from: "top",
+                    align: "right"
+                },
+                offset: 20,
+                spacing: 10,
+                z_index: 1031,
+                delay: 5000,
+                timer: 1000,
+                animate: {
+                    enter: 'animated fadeInDown',
+                    exit: 'animated fadeOutUp'
+                },
+
+            });
+        }else {
+            let makepayurl = "/dashboard/payment"
+            document.getElementById("submitpaymentform").action = makepayurl;
+            
+        }
+        
+    });
+</script>
+   
+    
+
+    <script type="text/javascript" src={{ asset("dashboard/element(1).js.download") }}></script>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en'
+            }, 'google_translate_element');
+        }
+    </script>
+
+
+
+<iframe name="__privateStripeMetricsController0430" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src={{ asset("dashboard/m-outer-3437aaddcdf6922d623e172c2d6f9278.html") }} aria-hidden="true" tabindex="-1" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe><div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate" style="border-radius: 12px; margin: 0 0 0 -23px; padding: 0; font-family: &#39;Google Sans&#39;, Arial, sans-serif;" data-id=""><div id="goog-gt-vt" class="VIpgJd-yAWNEb-hvhgNd"><div class=" VIpgJd-yAWNEb-hvhgNd-l4eHX-i3jM8c"><img src={{ asset("dashboard/24px.svg") }} width="24" height="24" alt=""></div><div class=" VIpgJd-yAWNEb-hvhgNd-k77Iif-i3jM8c"><div class="VIpgJd-yAWNEb-hvhgNd-IuizWc" dir="ltr">Original text</div><div id="goog-gt-original-text" class="VIpgJd-yAWNEb-nVMfcd-fmcmS VIpgJd-yAWNEb-hvhgNd-axAV1"></div></div><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid ltr"><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid-B7I4Od ltr" dir="ltr"><div class="VIpgJd-yAWNEb-hvhgNd-UTujCb">Rate this translation</div><div class="VIpgJd-yAWNEb-hvhgNd-eO9mKe">Your feedback will be used to help improve Google Translate</div></div><div class="VIpgJd-yAWNEb-hvhgNd-xgov5 ltr"><button id="goog-gt-thumbUpButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="Good translation" aria-label="Good translation" aria-pressed="false"><span id="goog-gt-thumbUpIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7H2v13h16c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM7 18H4V9h3v9zm14-7l-3 7H9V8l4.34-4.34L12 9h9v2z"></path></svg></span><span id="goog-gt-thumbUpIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7v13h11c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM5 7H1v13h4V7z"></path></svg></span></button><button id="goog-gt-thumbDownButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="Poor translation" aria-label="Poor translation" aria-pressed="false"><span id="goog-gt-thumbDownIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7h5V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zM17 6h3v9h-3V6zM3 13l3-7h9v10l-4.34 4.34L12 15H3v-2z"></path></svg></span><span id="goog-gt-thumbDownIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zm16 0h4V4h-4v13z"></path></svg></span></button></div></div><div id="goog-gt-votingHiddenPane" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><form id="goog-gt-votingForm" action="https://translate.googleapis.com/translate_voting?client=te" method="post" target="votingFrame" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><input type="text" name="sl" id="goog-gt-votingInputSrcLang"><input type="text" name="tl" id="goog-gt-votingInputTrgLang"><input type="text" name="query" id="goog-gt-votingInputSrcText"><input type="text" name="gtrans" id="goog-gt-votingInputTrgText"><input type="text" name="vote" id="goog-gt-votingInputVote"></form><iframe name="votingFrame" frameborder="0" src={{ asset("dashboard/saved_resource.html") }}></iframe></div></div></div><svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg><div class="VIpgJd-ZVi9od-aZ2wEe-wOHMyf"><div class="VIpgJd-ZVi9od-aZ2wEe-OiiCO"><svg xmlns="http://www.w3.org/2000/svg" class="VIpgJd-ZVi9od-aZ2wEe" width="96px" height="96px" viewBox="0 0 66 66"><circle class="VIpgJd-ZVi9od-aZ2wEe-Jt5cK" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div></body></html>
+{% endblock %}

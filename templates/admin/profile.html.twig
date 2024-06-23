@@ -1,0 +1,358 @@
+{% include 'adminbase.html.twig' %}
+
+{% block main %}
+    <div class="dashboard-wrapper">
+            <div class="container-fluid  dashboard-content">
+                <!-- ============================================================== -->
+                <!-- pageheader -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="index.php" class="breadcrumb-link">Dashboard</a></li>
+                                        <li class="breadcrumb-item"><a href="index.php" class="breadcrumb-link">Users</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page"></li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- end pageheader -->
+                <!-- ============================================================== -->
+             
+                    <div class="row">
+                        <!-- ============================================================== -->
+                        <!-- validation form -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">{{user.firstname ~ " " ~ user.lastname}} account details</h5>
+                                <div class="card-body">
+                                    <form  method="post" action="">
+                                        <div class="row">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">firstname</label>
+                                                <input type="text" class="form-control" id="validationCustom01" placeholder="firstname" value="{{user.firstname}}" required>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">email</label>
+                                                <input type="text" class="form-control" id="validationCustom01" placeholder="email address" value="{{user.email}}" required>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">phone</label>
+                                                <input type="text" class="form-control" id="validationCustom01" placeholder="phone number" value="{{user.mobile}}" required>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">Total Balance</label>
+                                                <input type="number" class="form-control" id="validationCustom01"  name="totalbalance" placeholder="totalbalance" value="{{user.totalbalance}}" required>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">crypto balance</label>
+                                                <input type="text" class="form-control" id="validationCustom01"  name="cryptobalance" placeholder="cryptobalance" value="{{user.cryptobalance}}" required>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">loan balance</label>
+                                                <input type="text" class="form-control" id="validationCustom01" name="loanbalance" placeholder="loanbalance" value="{{user.loanbalance}}" required>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">Total Income</label>
+                                                <input type="number" class="form-control" id="validationCustom01"  name="totalincome" placeholder="totalincome" value="{{user.totalincome}}" required>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">Card Activation Amount</label>
+                                                <input type="number" class="form-control" id="validationCustom01"  name="cardactivationamount" placeholder="cardactivationamount" value="{{user.cardactivationamount}}" required>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">Account Pin</label>
+                                                <input type="number" class="form-control" id="validationCustom01"  name="pin" placeholder="pin" value="{{user.pin}}" required>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">Btc Address</label>
+                                                <input type="text" class="form-control" id="validationCustom01" name="btcaddress" placeholder="firstname" value="{{user.btcaddress}}" required>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">Eth Address</label>
+                                                <input type="text" class="form-control" id="validationCustom01" name="ethaddress" placeholder="firstname" value="{{user.ethaddress}}" required>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">Usdt Address</label>
+                                                <input type="text" class="form-control" id="validationCustom01" name="usdtaddress" placeholder="firstname" value="{{user.usdtaddress}}" required>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+                                            
+                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">Paypal Address</label>
+                                                <input type="text" class="form-control" id="validationCustom01" name="paypaladdress" placeholder="firstname" value="{{user.paypaladdress}}" required>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+                                           
+                                           
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">country</label>
+                                                <input type="text" class="form-control" id="validationCustom01" name= "country" placeholder="Bonus" value="{{user.country}}" required>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+
+                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">state</label>
+                                                <input type="text" class="form-control" id="validationCustom01" name= "country" placeholder="state" value="{{user.state}}" required>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+
+                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">city</label>
+                                                <input type="text" class="form-control" id="validationCustom01" name= "country" placeholder="city" value="{{user.city}}" required>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+
+                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">zip</label>
+                                                <input type="text" class="form-control" id="validationCustom01" name= "country" placeholder="zip" value="{{user.zip}}" required>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+
+                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">date of birth</label>
+                                                <input type="text" class="form-control" id="validationCustom01" name= "country" placeholder="dob" value="{{user.dob}}" required>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+
+                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">address</label>
+                                                <input type="text" class="form-control" id="validationCustom01" name= "country" placeholder="address" value="{{user.address}}" required>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+
+                                            
+
+                                            
+
+
+                                           
+                                           
+                                           
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">Registration Date</label>
+                                                <input type="text" class="form-control" id="validationCustom01" placeholder="date" value="{{user.date|date('y - m - d')}}" required>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">Password</label>
+                                                <input type="text" class="form-control" id="validationCustom01" placeholder="password" value="{{user.password}}" required>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+
+
+                                        
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <input type="submit" class="btn btn-primary" name="update"  value="Update User">
+                                            </div>
+
+                                            
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <input type="submit" class="btn btn-primary" name="activate" value="{{ user.isstatus ? 'De-Activate User Account' : 'Activate User Account' }}">
+                                            </div> <br> <br>
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <input type="submit" class="btn btn-primary" name="delete"  value="Delete User">
+                                            </div>
+
+                                        </div>
+                                    </form>
+
+                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- end validation form -->
+                        <!-- ============================================================== -->
+                    </div>
+
+
+                    <div class="row">
+                        <!-- ============================================================== -->
+                        <!-- validation form -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">{{user.firstname ~ " " ~ user.lastname}} Add Card Transaction</h5>
+                                <div class="card-body">
+                                    <form  method="post" action="">
+                                        <div class="row">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">Amount</label>
+                                                <input type="text" class="form-control" name="amount" id="validationCustom01" placeholder="transaction amount" required>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">Interest</label>
+                                                <input type="text" class="form-control"  name="interest" id="validationCustom01" placeholder="transaction interest" required/>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">phone</label>
+                                                <select type="text" class="form-control" name="status" id="validationCustom01" placeholder="status" required>
+                                                <option value="approved">Approved</option>
+                                                <option value="pending">Pending</option>
+                                                <option value="declined">Declined</option>
+                                                </select>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+
+                                           
+                                            
+                                            
+                                        
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <input type="submit" class="btn btn-primary" name="addcardtransaction"  value="Add Card Transaction">
+                                            </div>
+
+                                            
+                                            
+                                        </div>
+                                    </form>
+
+                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- end validation form -->
+                        <!-- ============================================================== -->
+                    </div>
+
+                    
+                    <div class="row">
+                        <!-- ============================================================== -->
+                        <!-- validation form -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">{{user.firstname ~ " " ~ user.lastname}} Add Transfer Deposit</h5>
+                                <div class="card-body">
+                                    <form  method="post" action="">
+                                        <div class="row">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">Amount</label>
+                                                <input type="text" class="form-control" name="amount" id="validationCustom01" placeholder="transaction amount" required>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">Title</label>
+                                                <input type="text" class="form-control"  name="title" id="validationCustom01" placeholder="Bank Deposit" required/>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+
+                                            
+                                        
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <input type="submit" class="btn btn-primary" name="adddeposit"  value="Add Deposit">
+                                            </div>
+
+                                            
+                                            
+                                        </div>
+                                    </form>
+
+                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- end validation form -->
+                        <!-- ============================================================== -->
+                    </div>
+                  
+           
+            </div>
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+           
+            <!-- ============================================================== -->
+            <!-- end footer -->
+            <!-- ============================================================== -->
+        </div>
+{% endblock %}
+        
+    

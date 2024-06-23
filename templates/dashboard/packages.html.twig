@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    Alphaglobe Packages
+{% endblock %}
+{% block main %}
+        <div class="nk-content ">
+        <div class="container-fluid">
+            <div class="nk-content-inner">
+                <div class="nk-content-body">
+                    <div class="components-preview wide-md mx-auto">
+                        <div class="nk-block-head nk-block-head-lg wide-sm">
+                            <div class="nk-block-head-content">
+                                <div class="nk-block-head-sub"><a class="back-to" href="https://alphaglobe.org/dashboard"><i class="bi-arrow-left-short"></i><span>Dashboard</span></a></div>
+                                <h2 class="nk-block-title fw-normal">Financial Service</h2>
+                                <p>We offer investments to theokxglobe members in various financial services. You can select any service that interest you the most to start your investment.<br> Please kindly note that the accrued interest on each financial service differ.</p>
+                                <div class="nk-block-des">
+                                    <p class="lead"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+    </div>                    	<div>
+    </div><!-- .nk-block -->
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-lg-12 mb-5">
+                                                
+                                                <style>
+                                                    .btn-primary {
+    color: #fff;
+    background-color: #264653 !important;
+    border-color: #264653 !important;
+    -webkit-box-shadow: inset 0 1px 0 hsl(0deg 0% 100% / 15%);
+    box-shadow: inset 0 1px 0 hsl(0deg 0% 100% / 15%);
+}
+                                                </style>
+                                                                                                                                           <a href={{ path("deposit", parameters = {"type":"realestate"}) }} class="btn btn-primary m-3">Real Estate Plans</a>
+                                                                                                                                           <a href={{ path("deposit", parameters = {"type":"crypto"}) }} class="btn btn-primary m-3">Crypto Plans</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- .components-preview -->
+                </div>
+            </div>
+        </div>
+    </div>
+            <!-- content @e    -->
+        </div>
+        <!-- wrap @e    -->
+    </div>
+    <!-- main @e    -->
+</div>
+
+{% endblock %}

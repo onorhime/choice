@@ -1,0 +1,183 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    Alphaglobe Affiliate
+{% endblock %}
+{% block main %}
+          <div class="nk-content ">
+        <div class="container-fluid">
+            <div class="nk-content-inner">
+                <div class="nk-content-body">
+                    <div class="components-preview wide-md mx-auto">
+                        <div class="nk-block-head nk-block-head-lg wide-sm">
+                            <div class="nk-block-head-content">
+                                <div class="nk-block-head-sub"><a class="back-to" href="https://alphaglobe.org/dashboard"><i class="bi-arrow-left-short"></i><span>Dashboard</span></a></div>
+                                <h2 class="nk-block-title fw-normal">Referral</h2>
+                                <p>Grow your alphaglobe network by inviting your friends and family to join you.</p>
+                                <div class="nk-block-des">
+                                    <p class="lead"></p>
+                                </div>
+                            </div>
+                        </div><!-- .nk-block -->
+                        
+                                <div class="mt-4 col-md-12">
+                                    <h6 class="text-left title1">Your Referrals.</h6>
+                                    <div class="table-responsive"> 
+                                        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="DataTables_Table_0_length"><label>Show <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="DataTables_Table_0_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="DataTables_Table_0"></label></div></div></div><div class="row"><div class="col-sm-12"><table class="table UserTable table-hover dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info"> 
+                                            <thead> 
+                                                <tr role="row"><th class="sorting_desc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="descending" aria-label="Client name: activate to sort column ascending" style="width: 151.475px;">Client name</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Ref. level: activate to sort column ascending" style="width: 121.963px;">Ref. level</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Parent: activate to sort column ascending" style="width: 96.6625px;">Parent</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Client status: activate to sort column ascending" style="width: 154.438px;">Client status</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Date registered: activate to sort column ascending" style="width: 181.462px;">Date registered</th></tr>
+                                            </thead> 
+                                            <tbody> 
+                                              {% for ref in app.user.referrals %}
+                                              <tr class="odd">
+                                                <td valign="top" colspan="1" class="dataTables">{{ref.referred.name}}</td>
+                                                <td valign="top" colspan="1" class="dataTables">Level 10</td>
+                                                <td valign="top" colspan="1" class="dataTables">{{ref.referrer.name}}</td>
+                                                <td valign="top" colspan="1" class="dataTables">Active</td>
+                                                <td valign="top" colspan="1" class="dataTables">{{ ref.referrer.createdat|date('d F Y') }}</td>
+                                              </tr>
+                                              {% endfor %}
+                                                {% if app.user.referrals|length < 1 %}
+                                                  <tr class="odd"><td valign="top" colspan="5" class="dataTables_empty">No data available in table</td></tr>
+                                                {% endif %}
+                                            </tbody> 
+                                        </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a href="https://alphaglobe.org/dashboard/#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item next disabled" id="DataTables_Table_0_next"><a href="https://alphaglobe.org/dashboard/#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+                                    </div>
+                                </div>
+                    </div><!-- .components-preview -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        ;(function($) {
+            'use strict'
+            $(function() {
+                $('#example1').DataTable({
+                    responsive: true,
+                })
+
+                $('#example2').DataTable({
+                    autoWidth: true,
+                    scrollX: true,
+                    fixedColumns: true,
+                })
+
+                $('#example3').DataTable({
+                    autoWidth: true,
+                    scrollX: true,
+                    fixedColumns: true,
+                })
+            })
+        })(jQuery)
+    </script>
+            <!-- content @e    -->
+        </div>
+        <!-- wrap @e    -->
+    </div>
+    <!-- main @e    -->
+</div>
+
+<!-- app-root @e    -->
+<!-- JavaScript -->
+<script src={{ asset("dashboard/bundle.js.download") }}></script>
+<script src={{ asset("dashboard/scripts.js.download") }}></script>
+<script src={{ asset("dashboard/chart-ecommerce.js.download") }}></script>
+
+
+
+
+
+
+
+
+    <script type="text/javascript" src={{ asset("dashboard/saved_resource") }}></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="AqPdnPYOd5i6wCux1F6taYD8w1QykLpdpNm50bxF">
+    
+            <link rel="icon" href="https://alphaglobe.org/storage/app/public/photos/qrizBj5hVrpNXvgikD9Lk6RMnsf792HfJUpFqXNa.png" type="image/png">
+        <!-- Font Awesome 5 -->
+        <link rel="stylesheet" href={{ asset("dashboard/all.min.css") }}>
+        <!-- Page CSS -->
+        <link rel="stylesheet" href={{ asset("dashboard/fullcalendar.min.css") }}>
+        <!-- Purpose CSS -->
+        <link rel="stylesheet" href={{ asset("dashboard/purpose.css") }} id="stylesheet">
+        <link rel="stylesheet" href={{ asset("dashboard/animate.min.css") }}>
+        <link rel="stylesheet" href={{ asset("dashboard/sweetalert2.min.css") }}>
+        <script src={{ asset("dashboard/sweetalert.min.js.download") }}></script>
+        <link rel="stylesheet" type="text/css" href={{ asset("dashboard/datatables.min.css") }}>
+        <link rel="stylesheet" href={{ asset("dashboard/buttons.dataTables.min.css") }}>
+        <!-- Bootstrap Notify -->
+        <script src={{ asset("dashboard/bootstrap-notify.min.js.download") }}></script>
+        <script src={{ asset("dashboard/alpine.min.js.download") }} defer=""></script>
+        <link href={{ asset("dashboard/select2.min.css") }} rel="stylesheet">
+        <script src={{ asset("dashboard/select2.min.js.download") }}></script>
+
+        <style>[wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid], [wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short], [wire\:loading\.delay\.long], [wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest] {display:none;}[wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {animation-duration: 50000s;animation-name: livewireautofill;}@keyframes livewireautofill { from {} }</style>
+   
+
+
+
+
+
+    <!-- Application container -->
+    <div class="container-fluid container-application" style="background-color: #293145 !important;">
+        
+        <!-- Content -->
+        <div class="main-content position-relative">
+            <!-- Main nav -->
+
+            <!-- Page content -->
+            <div class="page-content">
+                            </div>
+            <!-- Footer -->
+            <div class="pt-5 pb-4 footer footer-light sticky-bottom" id="footer-main">
+                <div class="text-center row text-sm-left align-items-sm-center">
+                    <div class="col-sm-6">
+                    </div>
+                </div>
+            </div>
+        <div class="sidenav-mask mask-body d-xl-none" data-action="sidenav-unpin" data-target="undefined"></div></div>
+    </div>
+    
+
+    <script type="text/javascript" src={{ asset("dashboard/element.js.download") }}>
+    </script>
+    <script src={{ asset("dashboard/livewire.js.download") }} data-turbo-eval="false" data-turbolinks-eval="false"></script><script data-turbo-eval="false" data-turbolinks-eval="false">window.livewire = new Livewire();window.Livewire = window.livewire;window.livewire_app_url = '';window.livewire_token = 'AqPdnPYOd5i6wCux1F6taYD8w1QykLpdpNm50bxF';window.deferLoadingAlpine = function (callback) {window.addEventListener('livewire:load', function () {callback();});};let started = false;window.addEventListener('alpine:initializing', function () {if (! started) {window.livewire.start();started = true;}});document.addEventListener("DOMContentLoaded", function () {if (! started) {window.livewire.start();started = true;}});</script>
+            <!-- Scripts -->
+        <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
+        
+        <script src={{ asset("dashboard/progressbar.min.js.download") }}></script>
+        <script src={{ asset("dashboard/apexcharts.min.js.download") }}></script>
+        <script src={{ asset("dashboard/moment.min.js.download") }}></script>
+        <script src={{ asset("dashboard/fullcalendar.min.js.download") }}></script>
+        <script src={{ asset("dashboard/sweetalert.min.js.download") }}></script>
+        <!-- Purpose JS -->
+        <script src={{ asset("dashboard/purpose.js.download") }}></script>
+        <!-- Bootstrap Notify -->
+        <script src={{ asset("dashboard/bootstrap-notify.min.js.download") }}></script>
+        
+        
+       
+        <script src={{ asset("dashboard/custom.js.download") }}></script>
+        <script type="text/javascript" src={{ asset("dashboard/datatables.min.js.download") }}>
+        </script>
+       
+    
+
+    <script type="text/javascript" src={{ asset("dashboard/element(1).js.download") }}></script>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en'
+            }, 'google_translate_element');
+        }
+    </script>
+
+
+
+<iframe name="__privateStripeMetricsController2060" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src={{ asset("dashboard/m-outer-3437aaddcdf6922d623e172c2d6f9278.html") }} aria-hidden="true" tabindex="-1" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe><div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate" style="border-radius: 12px; margin: 0 0 0 -23px; padding: 0; font-family: &#39;Google Sans&#39;, Arial, sans-serif;" data-id=""><div id="goog-gt-vt" class="VIpgJd-yAWNEb-hvhgNd"><div class=" VIpgJd-yAWNEb-hvhgNd-l4eHX-i3jM8c"><img src={{ asset("dashboard/24px.svg") }} width="24" height="24" alt=""></div><div class=" VIpgJd-yAWNEb-hvhgNd-k77Iif-i3jM8c"><div class="VIpgJd-yAWNEb-hvhgNd-IuizWc" dir="ltr">Original text</div><div id="goog-gt-original-text" class="VIpgJd-yAWNEb-nVMfcd-fmcmS VIpgJd-yAWNEb-hvhgNd-axAV1"></div></div><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid ltr"><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid-B7I4Od ltr" dir="ltr"><div class="VIpgJd-yAWNEb-hvhgNd-UTujCb">Rate this translation</div><div class="VIpgJd-yAWNEb-hvhgNd-eO9mKe">Your feedback will be used to help improve Google Translate</div></div><div class="VIpgJd-yAWNEb-hvhgNd-xgov5 ltr"><button id="goog-gt-thumbUpButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="Good translation" aria-label="Good translation" aria-pressed="false"><span id="goog-gt-thumbUpIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7H2v13h16c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM7 18H4V9h3v9zm14-7l-3 7H9V8l4.34-4.34L12 9h9v2z"></path></svg></span><span id="goog-gt-thumbUpIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7v13h11c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM5 7H1v13h4V7z"></path></svg></span></button><button id="goog-gt-thumbDownButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="Poor translation" aria-label="Poor translation" aria-pressed="false"><span id="goog-gt-thumbDownIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7h5V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zM17 6h3v9h-3V6zM3 13l3-7h9v10l-4.34 4.34L12 15H3v-2z"></path></svg></span><span id="goog-gt-thumbDownIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zm16 0h4V4h-4v13z"></path></svg></span></button></div></div><div id="goog-gt-votingHiddenPane" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><form id="goog-gt-votingForm" action="https://translate.googleapis.com/translate_voting?client=te" method="post" target="votingFrame" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><input type="text" name="sl" id="goog-gt-votingInputSrcLang"><input type="text" name="tl" id="goog-gt-votingInputTrgLang"><input type="text" name="query" id="goog-gt-votingInputSrcText"><input type="text" name="gtrans" id="goog-gt-votingInputTrgText"><input type="text" name="vote" id="goog-gt-votingInputVote"></form><iframe name="votingFrame" frameborder="0" src={{ asset("dashboard/saved_resource.html") }}></iframe></div></div></div><svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg><div class="VIpgJd-ZVi9od-aZ2wEe-wOHMyf"><div class="VIpgJd-ZVi9od-aZ2wEe-OiiCO"><svg xmlns="http://www.w3.org/2000/svg" class="VIpgJd-ZVi9od-aZ2wEe" width="96px" height="96px" viewBox="0 0 66 66"><circle class="VIpgJd-ZVi9od-aZ2wEe-Jt5cK" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div></body></html>
+{% endblock %}

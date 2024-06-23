@@ -1,0 +1,228 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    Alphaglobe Dashboard
+{% endblock %}
+{% block main %}
+     <div class="nk-content ">
+        <div class="container-fluid">
+            <div class="nk-content-inner">
+                <div class="nk-content-body">
+                    <div class="nk-block-head nk-block-head-sm">
+                        <div class="nk-block-between">
+                            <div class="nk-block-head-content">
+                                <h3 class="nk-block-title page-title">Dashboard</h3>
+                                <p>Welcome  <b>{{app.user.username}}</b>, what would you like to do today?</p>
+                            </div><!-- .nk-block-head-content -->
+                            <div class="nk-block-head-content">
+                                <div class="toggle-wrap nk-block-tools-toggle">
+                                    <a href="https://alphaglobe.co.uk/#" class="btn btn-icon btn-trigger toggle-expand mr-n1" data-target="pageMenu"><i class="bi-wallet"></i></a>
+                                    <div class="toggle-expand-content" data-content="pageMenu" style="display: none;">
+                                        <ul class="nk-block-tools g-3">
+                                            <li><a href={{ path("packages") }} class="btn btn-white btn-dim btn-outline-light"><span>Deposit</span><i class="bi-cloud-download"></i></a></li>
+                                            <li class="nk-block-tools-opt"><a href={{ path("withdraw") }} class="btn btn-primary"><span>Withdraw</span>  <i class="bi-cloud-arrow-up-fill"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div><!-- .nk-block-head-content -->
+                        </div><!-- .nk-block-between -->
+                    </div><!-- .nk-block-head -->
+                    <div class="nk-block">
+                        <div class="row g-gs">
+                            <div class="col-xxl-3 col-sm-6">
+                                <div class="card">
+                                    <div class="nk-ecwg nk-ecwg6">
+                                        <div class="card-inner">
+                                            <div class="card-title-group">
+                                                <div class="card-title">
+                                                    <h6 class="title">Account Balance</h6>
+                                                </div>
+                                            </div>
+                                            <div class="data">
+                                                <div class="data-group">
+                                                    <div class="amount">${{ app.user.balance|number_format('2', '.', ',') }}</div>
+                                                    <div class="nk-ecwg6-ck"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                                        <canvas class="ecommerce-line-chart-s3 chartjs-render-monitor" id="todayOrders" style="display: block; width: 100px; height: 40px;" width="125" height="50"></canvas>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- .card-inner -->
+                                    </div><!-- .nk-ecwg -->
+                                </div><!-- .card -->
+                            </div><!-- .col -->
+                            <div class="col-xxl-3 col-sm-6">
+                                <div class="card">
+                                    <div class="nk-ecwg nk-ecwg6">
+                                        <div class="card-inner">
+                                            <div class="card-title-group">
+                                                <div class="card-title">
+                                                    <h6 class="title">Total Deposits</h6>
+                                                </div>
+                                            </div>
+                                            <div class="data">
+                                                <div class="data-group">
+                                                                                                                                                        <div class="amount">${{ app.user.totaldeposit|number_format('2', '.', ',') }}</div>
+                                                                                                                                                <div class="nk-ecwg6-ck"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                                        <canvas class="ecommerce-line-chart-s3 chartjs-render-monitor" id="todayRevenue" width="125" height="50" style="display: block; width: 100px; height: 40px;"></canvas>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- .card-inner -->
+                                    </div><!-- .nk-ecwg -->
+                                </div><!-- .card -->
+                            </div><!-- .col -->
+                            <div class="col-xxl-3 col-sm-6">
+                                <div class="card">
+                                    <div class="nk-ecwg nk-ecwg6">
+                                        <div class="card-inner">
+                                            <div class="card-title-group">
+                                                <div class="card-title">
+                                                    <h6 class="title">Total Withdrawals</h6>
+                                                </div>
+                                            </div>
+                                            <div class="data">
+                                                <div class="data-group">
+                                                                                                                                                       <div class="amount">${{ app.user.totalwithdrawal|number_format('2', '.', ',') }}</div>
+                                                                                                                                                <div class="nk-ecwg6-ck"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                                        <canvas class="ecommerce-line-chart-s3 chartjs-render-monitor" id="todayCustomers" width="125" height="50" style="display: block; width: 100px; height: 40px;"></canvas>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- .card-inner -->
+                                    </div><!-- .nk-ecwg -->
+                                </div><!-- .card -->
+                            </div><!-- .col -->
+                            <div class="col-xxl-3 col-sm-6">
+                                <div class="card">
+                                    <div class="nk-ecwg nk-ecwg6">
+                                        <div class="card-inner">
+                                            <div class="card-title-group">
+                                                <div class="card-title">
+                                                    <h6 class="title">Accumulated Interest</h6>
+                                                </div>
+                                            </div>
+                                            <div class="data">
+                                                <div class="data-group">
+                                                    <div class="amount">${{ app.user.totalinterests|number_format('2', '.', ',') }}</div>
+                                                    <div class="nk-ecwg6-ck"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                                        <canvas class="ecommerce-line-chart-s3 chartjs-render-monitor" id="todayVisitors" width="125" height="50" style="display: block; width: 100px; height: 40px;"></canvas>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- .card-inner -->
+                                    </div><!-- .nk-ecwg -->
+                                </div><!-- .card -->
+                            </div><!-- .col -->
+                            <div class="col-xxl-6">
+                                <div class="card card-full">
+                                    <div class="nk-ecwg nk-ecwg8 h-100">
+                                        <div class="card-inner">
+                                            <div class="card-title-group mb-3">
+                                                <div class="card-title">
+                                                    <h6 class="title">Market Prices</h6>
+                                                    <p>Live market prices as seen on trading view</p>
+                                                </div>
+                                            </div>
+                                            <div class="nk-ecwg8-ck" style="height: 500px">
+                                               <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container" style="width: 100%; height: 100%;">
+  <iframe scrolling="no" allowtransparency="true" frameborder="0" src={{ asset("dashboard/saved_resource(1).html") }} title="market quotes TradingView widget" lang="en" style="user-select: none; box-sizing: border-box; display: block; height: calc(100% - 32px); width: 100%;"></iframe>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/?utm_source=alphaglobe.org&amp;utm_medium=widget_new&amp;utm_campaign=market-quotes" rel="noopener" target="_blank"><span class="blue-text">Market summary</span></a> by TradingView</div>
+  
+<style>
+	.tradingview-widget-copyright {
+		font-size: 13px !important;
+		line-height: 32px !important;
+		text-align: center !important;
+		vertical-align: middle !important;
+		/* @mixin sf-pro-display-font; */
+		font-family: -apple-system, BlinkMacSystemFont, 'Trebuchet MS', Roboto, Ubuntu, sans-serif !important;
+		color: #B2B5BE !important;
+	}
+
+	.tradingview-widget-copyright .blue-text {
+		color: #2962FF !important;
+	}
+
+	.tradingview-widget-copyright a {
+		text-decoration: none !important;
+		color: #B2B5BE !important;
+	}
+
+	.tradingview-widget-copyright a:visited {
+		color: #B2B5BE !important;
+	}
+
+	.tradingview-widget-copyright a:hover .blue-text {
+		color: #1E53E5 !important;
+	}
+
+	.tradingview-widget-copyright a:active .blue-text {
+		color: #1848CC !important;
+	}
+
+	.tradingview-widget-copyright a:visited .blue-text {
+		color: #2962FF !important;
+	}
+	</style></div>
+<!-- TradingView Widget END -->
+                                            </div>
+                                        </div><!-- .card-inner -->
+                                    </div>
+                                </div><!-- .card -->
+                            </div><!-- .col -->
+                            <div class="col-xxl-12 col-md-12">
+                                <div class="card h-100">
+                                    <div class="card-inner">
+                                        <div class="card-head">
+                                            <h5 class="card-title">Invite members to alphaglobe and earn more</h5>
+                                            <p>Your unique link you can use to invite more members to join you on alphaglobe. Click the button below to copy.</p>
+                                        </div>
+                                        <form action="https://alphaglobe.co.uk/#">
+                                            <div class="form-group">
+                                                <label class="form-label" for="full-name">Affiliate Link</label>
+                                                <div class="form-control-wrap">
+                                                    <input type="text" readonly="" class="form-control js-copytextarea" value="https://alphaglobe.com/ref/{{app.user.username}}" id="full-name">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="button" class="btn btn-lg btn-primary js-textareacopybtn">Copy your affiliate link</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- .row -->
+                    </div><!-- .nk-block -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        var copyTextareaBtn = document.querySelector('.js-textareacopybtn');
+
+        copyTextareaBtn.addEventListener('click', function(event) {
+            var copyTextarea = document.querySelector('.js-copytextarea');
+            copyTextarea.select();
+
+            try {
+                var successful = document.execCommand('copy');
+                var msg = successful ? 'successful' : 'unsuccessful';
+
+                console.log('Copying text command was ' + msg);
+            } catch (err) {
+                console.log('Oops, unable to copy');
+            }
+        });
+    </script>
+            <!-- content @e    -->
+        </div>
+        <!-- wrap @e    -->
+    </div>
+    <!-- main @e    -->
+</div>
+<!-- app-root @e    -->
+<!-- JavaScript -->
+{% endblock %}

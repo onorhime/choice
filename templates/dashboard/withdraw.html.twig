@@ -1,0 +1,160 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    Alphaglobe Withdraw Funds
+{% endblock %}
+
+{% block main %}
+  <!-- content @s    -->
+      <div class="nk-content ">
+        <div class="container-fluid">
+            <div class="nk-content-inner">
+                <div class="nk-content-body">
+                    <div class="components-preview wide-md mx-auto">
+                        <div class="nk-block-head nk-block-head-lg wide-sm">
+                            <div class="nk-block-head-content">
+                                <div class="nk-block-head-sub"><a class="back-to" href="https://alphaglobe.org/dashboard"><i class="bi-arrow-left-short"></i><span>Dashboard</span></a></div>
+                                <h2 class="nk-block-title fw-normal">Withdraw</h2>
+                                <div class="nk-block-des">
+                                    <p class="lead"></p>
+                                </div>
+                            </div>
+                        </div><!-- .nk-block -->
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-lg-12 mb-5">
+                                                <h4 class="mb-4">
+                                                    <strong></strong>
+                                                </h4>
+
+                                                                                                                                                <p>Withdrawals takes less than 24hrs to be authorised and completed</p>
+                                                                                                                          <div>
+            </div>
+    <div>
+    </div>	<div>
+    </div>                        
+                                                                                
+                                                
+                                            <form method="post">
+                                        <input type="hidden" name="_token" value="AqPdnPYOd5i6wCux1F6taYD8w1QykLpdpNm50bxF">                                        <div class="form-group">
+                                            <label class="">withdrawal method</label>
+                                        <select class="form-control"  id="mySelect" onchange="switchSelectValueAndSetInput()">
+                                          <option value="btc">Bitcoin</option>
+                                          <option value="eth">Ethereum</option>
+                                          <option value="usdt">USDT (trc20)</option>
+
+                                        </select></br>
+                                        <input value="btc" class="form-control" id="method" type="hidden" name="method">
+                                        
+                                         <label class="">Enter Amount to withdraw($)</label>
+                                            <input class="form-control" max="{{app.user.balance}}" placeholder="Enter Amount" type="number" name="amount" required="">
+                                        </div>
+
+                                       
+                                               <div class="form-group focused">
+                                                <h5 class="">Enter Wallet Address </h5>
+                                                    <input class="form-control" placeholder="Enter Wallet Address" id="wallet" type="text" value="{{app.user.btc}}" name="wallet" required="">
+                                                    <small class="">this is not a default withdrawal option in your account, please enter the correct wallet address to recieve your funds.</small>
+                                                </div>  
+                                                                                        
+                                              <div class="form-group">
+                                            <button class="btn btn-primary" type="submit">Complete Request</button>
+                                        </div>
+                                    </form>
+                                     <script>
+    function switchSelectValueAndSetInput() {
+      // Get the select field and input field elements
+      const selectField = document.getElementById('mySelect');
+      const inputField = document.getElementById('wallet');
+
+      // Define the three possible cases for select field values
+      const cases = ['Option1', 'Option2', 'Option3'];
+
+      // Get the current value of the select field
+      let currentValue = selectField.value;
+
+      // Determine the next value based on the current value
+      let nextValue;
+      switch (currentValue) {
+        case 'btc':
+          nextValue = '{{app.user.btc}}';
+          break;
+        case 'eth':
+          nextValue = '{{app.user.eth}}';
+          break;
+        case 'usdt':
+          nextValue = '{{app.user.usdt}}';
+          break;
+        default:
+          nextValue = '{{app.user.btc}}';
+      }
+
+      // Set the select field to the next value
+      selectField.value = nextValue;
+
+      // Set the input field value based on the select field value
+      inputField.value = nextValue;
+      document.getElementById('method').value = currentValue;
+      
+    }
+  </script>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                            ;(function($) {
+                                'use strict'
+                                $(function() {
+                                    $('#form-validation').validate({
+                                        submit: {
+                                            settings: {
+                                                inputContainer: '.form-group',
+                                                errorListClass: 'form-control-error',
+                                                errorClass: 'has-danger',
+                                            },
+                                        },
+                                    })
+
+                                    $('#form-validation .remove-error').on('click', function() {
+                                        $('#form-validation').removeError()
+                                    })
+
+                                    $('#form-validation-simple').validate({
+                                        submit: {
+                                            settings: {
+                                                inputContainer: '.form-group',
+                                                errorListClass: 'form-control-error-list',
+                                                errorClass: 'has-danger',
+                                            },
+                                        },
+                                    })
+
+                                    $('#form-validation-simple .remove-error').on('click', function() {
+                                        $('#form-validation-simple').removeError()
+                                    })
+
+                                    $('.select2').select2()
+                                })
+                            })(jQuery)
+                        </script>
+                    </div><!-- .components-preview -->
+                </div>
+            </div>
+        </div>
+    </div>
+            <!-- content @e    -->
+        </div>
+        <!-- wrap @e    -->
+    </div>
+    <!-- main @e    -->
+</div>
+<form id="logout-form" action="https://quantumfinances.co.uk/authenticate/logout" method="POST" style="display: none;">
+    <input type="hidden" name="_token" value="GOULAosxTuPGNtP5Pawy6sZnZ3WsLBpCji2vT7Pv"></form>
+<!-- app-root @e    -->
+{% endblock %}

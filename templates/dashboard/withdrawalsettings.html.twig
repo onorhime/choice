@@ -1,0 +1,289 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    Alphaglobe Withdrawal Gateway
+{% endblock %}
+{% block main %}
+              <!-- content @s    -->
+    <div class="nk-content ">
+        <div class="container-fluid">
+            <div class="nk-content-inner">
+                <div class="nk-content-body">
+                    <div class="components-preview wide-md mx-auto">
+                        <div class="nk-block-head nk-block-head-lg wide-sm">
+                            <div class="nk-block-head-content">
+                                <br><br><br>
+                                <div class="nk-block-head-sub"><a class="back-to" href="https://alphaglobe.org/dashboard"><i class="bi-arrow-left-short"></i><span>Dashboard</span></a></div>
+                                <h2 class="nk-block-title fw-normal">Withdrawal Settings</h2>
+                                <p>Please fill in your withdrawal details below.</p>
+                                <div class="nk-block-des">
+                                    <p class="lead"></p>
+                                </div>
+                            </div>
+                        </div><!-- .nk-block -->
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-lg-12 mb-5">
+                                                <h4 class="mb-4">
+                                                    <strong></strong>
+                                                </h4>
+                                                                                                                                                <form method="post" action="javascript:void(0)" id="updatewithdrawalinfo">
+    <input type="hidden" name="_token" value="AqPdnPYOd5i6wCux1F6taYD8w1QykLpdpNm50bxF">    <input type="hidden" name="_method" value="PUT">    <fieldset class="mt-2">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label class="">Bitcoin</label>
+                <input type="text" name="btc" value="{{app.user.btc}}" class="form-control " placeholder="Enter Bitcoin Address">
+                <small class="">Enter your Bitcoin Address that will be used to withdraw your funds</small>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="">Ethereum</label>
+                <input type="text" name="eth" value="{{app.user.eth}}" class="form-control " placeholder="Enter Ethereum Address">
+                <small class="">Enter your Ethereum Address that will be used to withdraw your funds</small>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="">USDT (trc20)</label>
+                <input type="text" name="usdt" value="{{app.user.usdt}}" class="form-control " placeholder="Enter Usdt Address">
+                <small class="">Enter your USDT Address that will be used to withdraw your funds</small>
+            </div>
+        </div>
+    </fieldset>
+    <button type="submit" class="px-5 btn btn-primary">Save</button>
+</form>
+
+
+<script>
+    
+    document.getElementById('updatewithdrawalinfo').addEventListener('submit', function() {
+       // alert('love');
+        $.ajax({
+            url: "/dashboard/withdrawalsettings",
+            type: 'POST',
+            data: $('#updatewithdrawalinfo').serialize(),
+            success: function(response) {
+                if (response.status === 200) {
+                    $.notify({
+                        // options
+                        icon: 'flaticon-alarm-1',
+                        title: 'Success',
+                        message: response.success,
+                    },{
+                        // settings
+                        type: 'success',
+                        allow_dismiss: true,
+                        newest_on_top: false,
+                        showProgressbar: true,
+                        placement: {
+                            from: "top",
+                            align: "right"
+                        },
+                        offset: 20,
+                        spacing: 10,
+                        z_index: 1031,
+                        delay: 5000,
+                        timer: 1000,
+                        url_target: '_blank',
+                        mouse_over: null,
+                        animate: {
+                            enter: 'animated fadeInDown',
+                            exit: 'animated fadeOutUp'
+                        },
+    
+                    });
+                } else {
+                   
+                }
+            },
+            error: function(data) {
+                console.log(data);
+            },
+    
+        });
+    });
+</script>                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                            ;(function($) {
+                                'use strict'
+                                $(function() {
+                                    $('#form-validation').validate({
+                                        submit: {
+                                            settings: {
+                                                inputContainer: '.form-group',
+                                                errorListClass: 'form-control-error',
+                                                errorClass: 'has-danger',
+                                            },
+                                        },
+                                    })
+
+                                    $('#form-validation .remove-error').on('click', function() {
+                                        $('#form-validation').removeError()
+                                    })
+
+                                    $('#form-validation-simple').validate({
+                                        submit: {
+                                            settings: {
+                                                inputContainer: '.form-group',
+                                                errorListClass: 'form-control-error-list',
+                                                errorClass: 'has-danger',
+                                            },
+                                        },
+                                    })
+
+                                    $('#form-validation-simple .remove-error').on('click', function() {
+                                        $('#form-validation-simple').removeError()
+                                    })
+
+                                    $('.select2').select2()
+                                })
+                            })(jQuery)
+                        </script>
+                    </div><!-- .components-preview -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        #mediaFile {
+            position: absolute;
+            top: -1000px;
+        }
+
+        #profile {
+            border-radius: 100%;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            position: relative;
+            top: -80px;
+            margin-bottom: -80px;
+            cursor: pointer;
+            background: #ddd;
+            display: table;
+            background-size: cover;
+            background-position: center center;
+            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.35);
+        }
+
+        #profile.is-invalid {
+            border: 4px solid red;
+        }
+        #profile .dashes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 100%;
+            width: 100%;
+            height: 100%;
+            border: 4px dashed #fff;
+            opacity: 1;
+        }
+        #profile label {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            padding: 0 30px;
+            color: grey;
+            opacity: 1;
+        }
+        #profile.dragging {
+            background-image: none !important;
+        }
+        #profile.dragging .dashes {
+            -webkit-animation-duration: 10s;
+            animation-duration: 10s;
+            -webkit-animation-name: spin;
+            animation-name: spin;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+            opacity: 1 !important;
+        }
+        #profile.dragging label {
+            opacity: 0.5 !important;
+        }
+        #profile.hasImage .dashes, #profile.hasImage label {
+            opacity: 0;
+            pointer-events: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+    </style>
+
+    <script>
+        // ----- On render -----
+        $(function() {
+
+            $('#profile').addClass('dragging').removeClass('dragging');
+        });
+
+        $('#profile').on('dragover', function() {
+            $('#profile').addClass('dragging')
+        }).on('dragleave', function() {
+            $('#profile').removeClass('dragging')
+        }).on('drop', function(e) {
+            $('#profile').removeClass('dragging hasImage');
+
+            if (e.originalEvent) {
+                var file = e.originalEvent.dataTransfer.files[0];
+                console.log(file);
+
+                var reader = new FileReader();
+
+                //attach event handlers here...
+
+                reader.readAsDataURL(file);
+                reader.onload = function(e) {
+                    console.log(reader.result);
+                    $('#profile').css('background-image', 'url(' + reader.result + ')').addClass('hasImage');
+
+                }
+
+            }
+        })
+        $('#profile').on('click', function(e) {
+            console.log('clicked')
+            $('#mediaFile').click();
+        });
+        window.addEventListener("dragover", function(e) {
+            e = e || event;
+            e.preventDefault();
+        }, false);
+        window.addEventListener("drop", function(e) {
+            e = e || event;
+            e.preventDefault();
+        }, false);
+        $('#mediaFile').change(function(e) {
+
+            var input = e.target;
+            if (input.files && input.files[0]) {
+                var file = input.files[0];
+
+                var reader = new FileReader();
+
+                reader.readAsDataURL(file);
+                reader.onload = function(e) {
+                    console.log(reader.result);
+                    $('#profile').css('background-image', 'url(' + reader.result + ')').addClass('hasImage');
+                }
+            }
+        })
+    </script>
+            <!-- content @e    -->
+        </div>
+        <!-- wrap @e    -->
+    </div>
+    <!-- main @e    -->
+</div>
+{% endblock %}

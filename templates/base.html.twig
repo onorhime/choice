@@ -1,17 +1,393 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
+{% block head %}
+    
+<!-- saved from url=(0032)https://alphaglobe.org/dashboard -->
+<html lang="zxx" class="js" style="height: 100%;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+ <link rel="stylesheet" href={{ asset("dashboard/bootstrap-icons.css") }}>
+<!--<base href="../">--><!--<base href=".">--><base href=".">
+    
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <!-- Fav Icon  -->
+    <link rel="icon" href="https://alphaglobe.com/asset/temp/favicon.png">
+     <link rel="stylesheet" href={{ asset("dashboard/sweetalert2.min.css") }}>
+    <script type="text/javascript" charset="utf-8" async="" src={{ asset("dashboard/loader.js.download") }}></script><script src={{ asset("dashboard/sweetalert.min.js.download") }}></script>
+    
+    <!-- Page Title  -->
+    <title>{% block title %}
+        Alphaglobe
+    {% endblock %}</title>
+    <!-- StyleSheets  -->
+    <link rel="stylesheet" href={{ asset("dashboard/dashlite.css") }}>
+    <link id="skin-default" rel="stylesheet" href={{ asset("dashboard/theme.css") }}>
+<link type="text/css" rel="stylesheet" charset="UTF-8" href={{ asset("dashboard/translateelement.css") }}><style type="text/css">/* Chart.js */
+@keyframes  chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style><style type="text/css">#ph9ivt7lke1o1673604765151 {outline:none !important;
+visibility:visible !important;
+resize:none !important;
+box-shadow:none !important;
+overflow:visible !important;
+background:none !important;
+opacity:1 !important;
+filter:alpha(opacity=100) !important;
+-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important;
+-mz-opacity:1 !important;
+-khtml-opacity:1 !important;
+top:auto !important;
+right:0px !important;
+bottom:0px !important;
+left:auto !important;
+position:fixed !important;
+border:0 !important;
+min-height:0px  !important;
+min-width:0px  !important;
+max-height:none  !important;
+max-width:none  !important;
+padding:0px !important;
+margin:0px !important;
+-moz-transition-property:none !important;
+-webkit-transition-property:none !important;
+-o-transition-property:none !important;
+transition-property:none !important;
+transform:none !important;
+-webkit-transform:none !important;
+-ms-transform:none !important;
+width:auto !important;
+height:auto  !important;
+display:none !important;
+z-index:2000000000 !important;
+background-color:transparent !important;
+cursor:none !important;
+float:none !important;
+border-radius:unset !important;
+pointer-events:auto !important;
+clip:auto !important;
+color-scheme:light !important;}#ph9ivt7lke1o1673604765151.widget-hidden {display: none !important;}#ph9ivt7lke1o1673604765151.widget-visible {display: block !important;}
+@media  print{
+ #ph9ivt7lke1o1673604765151.widget-visible { 
+display: none !important;
+ }
+}</style><style type="text/css">@keyframes  tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}@-moz-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}@-webkit-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}#u24psih2nsd81673604765676.open{animation : tawkMaxOpen .25s ease!important;}@keyframes  tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}@-moz-keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}@-webkit-keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}#u24psih2nsd81673604765676.closed{animation: tawkMaxClose .25s ease!important}</style><script type="text/javascript" charset="utf-8" async="" src={{ asset("dashboard/loader.js.download") }}></script><script src={{ asset("dashboard/emojione.min.js.download") }} type="text/javascript" async="" defer=""></script><script src={{ asset("dashboard/emojione.min.js.download") }} type="text/javascript" async="" defer=""></script><style type="text/css">/* Chart.js */
+@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style></head>
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
-</html>
+<body class="nk-body bg-lighter npc-default has-sidebar no-touch nk-nio-theme" style="position: relative; min-height: 100%; top: 0px;">
+<div class="nk-app-root">
+    <!-- main @s    -->
+    <div class="nk-main ">
+        <!-- sidebar @s    -->
+        <div class="nk-sidebar nk-sidebar-fixed is-dark" data-content="sidebarMenu">
+            <div class="nk-sidebar-element nk-sidebar-head">
+                <div class="nk-sidebar-brand">
+                    <a href="https://alphaglobe.org/" class="logo-link nk-sidebar-logo">
+                        <img src={{ asset("dashboard/Logo_kingsley-pav84691l3e18xsnqfyms4qi1fvqctrqy1gtofk740.png") }} style="height: 35px">
+                    </a>
+                </div>
+                <div class="nk-menu-trigger mr-n2">
+                    <a href="https://greenvilleglobes.com/#" class="nk-nav-toggle nk-quick-nav-icon d-xl-none" data-target="sidebarMenu"><i class="bi-arrow-left-short"></i></a>
+                    <a href="https://greenvilleglobes.com/#" class="nk-nav-compact nk-quick-nav-icon d-none d-xl-inline-flex" data-target="sidebarMenu"><i class="bi-justify"></i></a>
+                </div>
+            </div><!-- .nk-sidebar-element -->
+            <div class="nk-sidebar-element">
+                <div class="nk-sidebar-content">
+                    <div class="nk-sidebar-menu" data-simplebar="init"><div class="simplebar-wrapper" style="margin: -16px 0px -40px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" style="height: 100%; overflow: hidden;"><div class="simplebar-content" style="padding: 16px 0px 40px;">
+                        <ul class="nk-menu">
+                            <li class="nk-menu-heading">
+                                <h6 class="overline-title text-primary-alt">Member Account</h6>
+                            </li><!-- .nk-menu-item -->
+                            <li class="nk-menu-item">
+                                <a href={{ path('dashboard') }} class="nk-menu-link" data-original-title="" title="">
+                                    <span class="nk-menu-icon"><i class="bi-bank2"></i> </span>
+                                    <span class="nk-menu-text">Dashboard</span>
+                                </a>
+                            </li><!-- .nk-menu-item -->
+                            
+                            
+                            <li class="nk-menu-item">
+                                <a href={{ path('affiliate') }} class="nk-menu-link" data-original-title="" title="">
+                                    <span class="nk-menu-icon"><i class="bi-people"></i></span>
+                                    <span class="nk-menu-text">Affiliate</span>
+                                </a>
+                            </li><!-- .nk-menu-item -->
+                            <li class="nk-menu-heading">
+                                <h6 class="overline-title text-primary-alt">Finance</h6>
+                            </li><!-- .nk-menu-item -->
+                                                                                                                     <li class="nk-menu-item">
+                                <a href={{ path('depo') }} class="nk-menu-link" data-original-title="" title="">
+                                    <span class="nk-menu-icon"><i class="bi-credit-card-fill"></i></span>
+                                    <span class="nk-menu-text">Deposits</span>
+                                </a>
+                            </li>
+                            <li class="nk-menu-item has-sub">
+                                <a href={{ path('packages') }}  class="nk-menu-link" data-original-title="" title="">
+                                    <span class="nk-menu-icon"><i class="bi-reception-4"></i></span>
+                                    <span class="nk-menu-text">Our Packages</span>
+                                </a>
+                            </li><!-- .nk-menu-item -->
+                            <li class="nk-menu-item">
+                                <a href={{ path("withdrawals") }} class="nk-menu-link" data-original-title="" title="">
+                                    <span class="nk-menu-icon"><i class="bi-cloud-arrow-up-fill"></i></span>
+                                    <span class="nk-menu-text">Withdrawals</span>
+                                </a>
+                            </li><!-- .nk-menu-item -->
+                            <li class="nk-menu-item has-sub">
+                                <a href={{ path("withdrawals") }} class="nk-menu-link" data-original-title="" title="">
+                                    <span class="nk-menu-icon"><i class="bi-reception-4"></i></span>
+                                    <span class="nk-menu-text">Interest</span>
+                                </a>
+                            </li><!-- .nk-menu-item -->
+                            <li class="nk-menu-heading">
+                                <h6 class="overline-title text-primary-alt">Settings</h6>
+                            </li><!-- .nk-menu-item -->
+                            <li class="nk-menu-item has-sub">
+                                <a href={{ path("profile") }} class="nk-menu-link" data-original-title="" title="">
+                                    <span class="nk-menu-icon"><i class="bi-person-fill"></i></span>
+                                    <span class="nk-menu-text">Profile</span>
+                                </a>
+                            </li><!-- .nk-menu-item -->
+                            <li class="nk-menu-item has-sub">
+                                <a href={{ path("withdrawalsettings") }} class="nk-menu-link" data-original-title="" title="">
+                                    <span class="nk-menu-icon"><i class="bi-gear-fill"></i></span>
+                                    <span class="nk-menu-text">Withdrawal Gateway</span>
+                                </a>
+                            </li><!-- .nk-menu-item -->
+                            <li class="nk-menu-item has-sub">
+                                <a href={{ path("passwordsettings") }} class="nk-menu-link" data-original-title="" title="">
+                                    <span class="nk-menu-icon"><i class="bi-shield-fill-exclamation"></i></span>
+                                    <span class="nk-menu-text">Password</span>
+                                </a>
+                            </li><!-- .nk-menu-item -->
+                            <li class="nk-menu-item has-sub">
+                                <a class="dropdown-item text-danger" href={{ path("logout") }}>
+                         <span class="nk-menu-icon"><i class="bi-power"></i></span>
+                                    <span class="nk-menu-text">Logout</span>
+                        </a>
+                        <form id="logout-form" action="https://alphaglobe.org/logout" method="POST" style="display: none;">
+                            <input type="hidden" name="_token" value="AqPdnPYOd5i6wCux1F6taYD8w1QykLpdpNm50bxF">
+                        </form>
+                            </li><!-- .nk-menu-item -->
+                        </ul><!-- .nk-menu -->
+                    </div></div></div></div><div class="simplebar-placeholder" style="width: auto; height: 672px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"><div class="simplebar-scrollbar" style="height: 0px; display: none;"></div></div></div><!-- .nk-sidebar-menu -->
+                </div><!-- .nk-sidebar-content -->
+            </div><!-- .nk-sidebar-element -->
+        </div>        <!-- sidebar @e    -->
+        <!-- wrap @s    -->
+        <div class="nk-wrap ">
+            <!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = '6cd8f42c1766b6e2dd78cf4393894ed084c6a6d6';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+<noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
+            <!-- main header @s    -->
+            <div class="nk-header nk-header-fixed is-light">
+                <div class="container-fluid">
+                    <div class="nk-header-wrap">
+                        <div class="nk-menu-trigger d-xl-none ml-n1">
+                            <a href="https://greenvilleglobes.com/#" class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><i class="bi-justify"></i></a>
+                        </div>
+                        <div class="nk-header-brand d-xl-none">
+                            <a href="https://alphaglobe.org/dashboard" class="logo-link">
+                                <img src={{ asset("dashboard/Logo_kingsley-pav84691l3e18xsnqfyms4qi1fvqctrqy1gtofk740.png") }} style="height: 35px">
+                            </a>
+                        </div><!-- .nk-header-brand -->
+                        <div class="nk-header-tools">
+                            <ul class="nk-quick-nav">
+                                <li class="dropdown user-dropdown">
+                                    <a href="https://greenvilleglobes.com/#" class="dropdown-toggle mr-n1" data-toggle="dropdown">
+                                        <div class="user-toggle">
+                                            <div class="user-avatar sm">
+                                                <i class="bi-person"></i>
+                                            </div>
+                                            <div class="user-info d-none d-xl-block">
+                                                                                                    
+                                                                                                <div class="user-name dropdown-indicator">{{app.user.username}}</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
+                                        <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
+                                            <div class="user-card">
+                                                <div class="user-avatar">
+                                                    <span><i class="bi-person"></i></span>
+                                                </div>
+                                                <div class="user-info">
+                                                    <span class="lead-text">{{app.user.username}}!</span>
+                                                    <span class="sub-text">{{app.user.email}}!</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-inner">
+                                            <ul class="link-list">
+                                                <li><a href="https://alphaglobe.org/dashboard/account-settings"><i class="bi-person"></i><span>View Profile</span></a></li>
+                                                <li><a href="https://alphaglobe.org/dashboard/deposits"><i class="bi-credit-card-fill"></i><span>Deposit</span></a></li>
+                                                <li><a href="https://alphaglobe.org/dashboard/withdrawals"><i class="bi-arrow-bar-up"></i><span>Withdraw</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-inner">
+                                            <ul class="link-list">
+                                                <li><a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById(&#39;logout-form&#39;).submit();"><i class="bi-power"></i><span>Sign out</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!-- .nk-header-wrap -->
+                </div><!-- .container-fliud -->
+            </div>
+            <!-- main header @e    -->            <!-- content @s    -->
+                <br><br><br>
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container" style="width: 100%; height: 78px;">
+  <iframe scrolling="no" allowtransparency="true" frameborder="0" src={{ asset("dashboard/saved_resource.html") }} title="ticker tape TradingView widget" lang="en" style="user-select: none; box-sizing: border-box; display: block; height: 46px; width: 100%;"></iframe>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/?utm_source=alphaglobe.org&amp;utm_medium=widget_new&amp;utm_campaign=ticker-tape" rel="noopener" target="_blank"><span class="blue-text">Markets today</span></a> by TradingView</div>
+  
+<style>
+	.tradingview-widget-copyright {
+		font-size: 13px !important;
+		line-height: 32px !important;
+		text-align: center !important;
+		vertical-align: middle !important;
+		/* @mixin sf-pro-display-font; */
+		font-family: -apple-system, BlinkMacSystemFont, 'Trebuchet MS', Roboto, Ubuntu, sans-serif !important;
+		color: #B2B5BE !important;
+	}
+
+	.tradingview-widget-copyright .blue-text {
+		color: #2962FF !important;
+	}
+
+	.tradingview-widget-copyright a {
+		text-decoration: none !important;
+		color: #B2B5BE !important;
+	}
+
+	.tradingview-widget-copyright a:visited {
+		color: #B2B5BE !important;
+	}
+
+	.tradingview-widget-copyright a:hover .blue-text {
+		color: #1E53E5 !important;
+	}
+
+	.tradingview-widget-copyright a:active .blue-text {
+		color: #1848CC !important;
+	}
+
+	.tradingview-widget-copyright a:visited .blue-text {
+		color: #2962FF !important;
+	}
+	</style></div>
+<!-- TradingView Widget END -->
+{% endblock %}
+{% block main %}
+    
+{% endblock %}
+{% block footer %}
+    <script src={{ asset("dashboard/bundle.js.download") }}></script>
+<script src={{ asset("dashboard/scripts.js.download") }}></script>
+<script src={{ asset("dashboard/chart-ecommerce.js.download") }}></script>
+
+<script type="text/javascript" src={{ asset("dashboard/saved_resource") }}></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="AqPdnPYOd5i6wCux1F6taYD8w1QykLpdpNm50bxF">
+    
+            <link rel="icon" href="https://alphaglobe.org/storage/app/public/photos/qrizBj5hVrpNXvgikD9Lk6RMnsf792HfJUpFqXNa.png" type="image/png">
+        <!-- Font Awesome 5 -->
+        <link rel="stylesheet" href={{ asset("dashboard/all.min.css") }}>
+        <!-- Page CSS -->
+        <link rel="stylesheet" href={{ asset("dashboard/fullcalendar.min.css") }}>
+        <!-- Purpose CSS -->
+        <link rel="stylesheet" href={{ asset("dashboard/purpose.css") }} id="stylesheet">
+        <link rel="stylesheet" href={{ asset("dashboard/animate.min.css") }}>
+        <link rel="stylesheet" href={{ asset("dashboard/sweetalert2.min.css") }}>
+        <script src={{ asset("dashboard/sweetalert.min.js.download") }}></script>
+        <link rel="stylesheet" type="text/css" href={{ asset("dashboard/datatables.min.css") }}>
+        <link rel="stylesheet" href={{ asset("dashboard/buttons.dataTables.min.css") }}>
+        <!-- Bootstrap Notify -->
+        <script src={{ asset("dashboard/bootstrap-notify.min.js.download") }}></script>
+        <script src={{ asset("dashboard/alpine.min.js.download") }} defer=""></script>
+        <link href={{ asset("dashboard/select2.min.css") }} rel="stylesheet">
+        <script src={{ asset("dashboard/select2.min.js.download") }}></script>
+
+        <style>[wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid], [wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short], [wire\:loading\.delay\.long], [wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest] {display:none;}[wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {animation-duration: 50000s;animation-name: livewireautofill;}@keyframes livewireautofill { from {} }</style>
+   
+
+
+
+
+
+    <!-- Application container -->
+    <div class="container-fluid container-application" style="background-color: #293145 !important;">
+        
+        <!-- Content -->
+        <div class="main-content position-relative">
+            <!-- Main nav -->
+
+            <!-- Page content -->
+            <div class="page-content">
+                            </div>
+            <!-- Footer -->
+            <div class="pt-5 pb-4 footer footer-light sticky-bottom" id="footer-main">
+                <div class="text-center row text-sm-left align-items-sm-center">
+                    <div class="col-sm-6">
+                    </div>
+                </div>
+            </div>
+        <div class="sidenav-mask mask-body d-xl-none" data-action="sidenav-unpin" data-target="undefined"></div></div>
+    </div>
+    
+
+    <script type="text/javascript" src={{ asset("dashboard/element.js.download") }}>
+    </script>
+    <script src={{ asset("dashboard/livewire.js.download") }} data-turbo-eval="false" data-turbolinks-eval="false"></script><script data-turbo-eval="false" data-turbolinks-eval="false">window.livewire = new Livewire();window.Livewire = window.livewire;window.livewire_app_url = '';window.livewire_token = 'AqPdnPYOd5i6wCux1F6taYD8w1QykLpdpNm50bxF';window.deferLoadingAlpine = function (callback) {window.addEventListener('livewire:load', function () {callback();});};let started = false;window.addEventListener('alpine:initializing', function () {if (! started) {window.livewire.start();started = true;}});document.addEventListener("DOMContentLoaded", function () {if (! started) {window.livewire.start();started = true;}});</script>
+            <!-- Scripts -->
+        <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
+        
+        <script src={{ asset("dashboard/progressbar.min.js.download") }}></script>
+        <script src={{ asset("dashboard/apexcharts.min.js.download") }}></script>
+        <script src={{ asset("dashboard/moment.min.js.download") }}></script>
+        <script src={{ asset("dashboard/fullcalendar.min.js.download") }}></script>
+        <script src={{ asset("dashboard/sweetalert.min.js.download") }}></script>
+        <!-- Purpose JS -->
+        <script src={{ asset("dashboard/purpose.js.download") }}></script>
+        <!-- Bootstrap Notify -->
+        <script src={{ asset("dashboard/bootstrap-notify.min.js.download") }}></script>
+        
+        
+       
+        <script src={{ asset("dashboard/custom.js.download") }}></script>
+        <script type="text/javascript" src={{ asset("dashboard/datatables.min.js.download") }}>
+        </script>
+       
+    
+
+    <script type="text/javascript" src={{ asset("dashboard/element(1).js.download") }}></script>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en'
+            }, 'google_translate_element');
+        }
+    </script>
+
+
+
+<iframe name="__privateStripeMetricsController2060" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src={{ asset("dashboard/m-outer-3437aaddcdf6922d623e172c2d6f9278.html") }} aria-hidden="true" tabindex="-1" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe><div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate" style="border-radius: 12px; margin: 0 0 0 -23px; padding: 0; font-family: &#39;Google Sans&#39;, Arial, sans-serif;" data-id=""><div id="goog-gt-vt" class="VIpgJd-yAWNEb-hvhgNd"><div class=" VIpgJd-yAWNEb-hvhgNd-l4eHX-i3jM8c"><img src={{ asset("dashboard/24px.svg") }} width="24" height="24" alt=""></div><div class=" VIpgJd-yAWNEb-hvhgNd-k77Iif-i3jM8c"><div class="VIpgJd-yAWNEb-hvhgNd-IuizWc" dir="ltr">Original text</div><div id="goog-gt-original-text" class="VIpgJd-yAWNEb-nVMfcd-fmcmS VIpgJd-yAWNEb-hvhgNd-axAV1"></div></div><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid ltr"><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid-B7I4Od ltr" dir="ltr"><div class="VIpgJd-yAWNEb-hvhgNd-UTujCb">Rate this translation</div><div class="VIpgJd-yAWNEb-hvhgNd-eO9mKe">Your feedback will be used to help improve Google Translate</div></div><div class="VIpgJd-yAWNEb-hvhgNd-xgov5 ltr"><button id="goog-gt-thumbUpButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="Good translation" aria-label="Good translation" aria-pressed="false"><span id="goog-gt-thumbUpIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7H2v13h16c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM7 18H4V9h3v9zm14-7l-3 7H9V8l4.34-4.34L12 9h9v2z"></path></svg></span><span id="goog-gt-thumbUpIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7v13h11c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM5 7H1v13h4V7z"></path></svg></span></button><button id="goog-gt-thumbDownButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="Poor translation" aria-label="Poor translation" aria-pressed="false"><span id="goog-gt-thumbDownIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7h5V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zM17 6h3v9h-3V6zM3 13l3-7h9v10l-4.34 4.34L12 15H3v-2z"></path></svg></span><span id="goog-gt-thumbDownIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zm16 0h4V4h-4v13z"></path></svg></span></button></div></div><div id="goog-gt-votingHiddenPane" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><form id="goog-gt-votingForm" action="https://translate.googleapis.com/translate_voting?client=te" method="post" target="votingFrame" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><input type="text" name="sl" id="goog-gt-votingInputSrcLang"><input type="text" name="tl" id="goog-gt-votingInputTrgLang"><input type="text" name="query" id="goog-gt-votingInputSrcText"><input type="text" name="gtrans" id="goog-gt-votingInputTrgText"><input type="text" name="vote" id="goog-gt-votingInputVote"></form><iframe name="votingFrame" frameborder="0" src={{ asset("dashboard/saved_resource.html") }}></iframe></div></div></div><svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg><div class="VIpgJd-ZVi9od-aZ2wEe-wOHMyf"><div class="VIpgJd-ZVi9od-aZ2wEe-OiiCO"><svg xmlns="http://www.w3.org/2000/svg" class="VIpgJd-ZVi9od-aZ2wEe" width="96px" height="96px" viewBox="0 0 66 66"><circle class="VIpgJd-ZVi9od-aZ2wEe-Jt5cK" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div></body></html>
+
+
+{% block customJs %}
+    
+{% endblock %}
+
+</body></html>
+{% endblock %}
