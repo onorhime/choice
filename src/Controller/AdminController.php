@@ -48,10 +48,10 @@ class AdminController extends AbstractController
         $em = $doctrine->getManager();
         $id = $doctrine->getRepository(User::class)->find($id);
         if(null != $request->get('update')){
-            $id->setBalance($request->get('totalbalance'))
-               ->setTotaldeposit($request->get('loanbalance'))
-               ->setTotalwithdrawal($request->get('totalincome'))
-               ->setTotalwithdrawal($request->get('totalincome'))
+            $id->setBalance($request->get('balance'))
+               ->setTotaldeposit($request->get('deposit'))
+               ->setTotalwithdrawal($request->get('withdrawal'))
+               ->setTotalinterests($request->get('interest'));
     
             $em->persist($id);
             $em->flush();
