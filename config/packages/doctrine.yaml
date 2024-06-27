@@ -4,7 +4,7 @@ doctrine:
         host: localhost
         dbname: choice
         user: root
-        password:  
+        password: 
         driver: 'pdo_mysql'
         server_version: '5.7'
         charset: utf8mb4

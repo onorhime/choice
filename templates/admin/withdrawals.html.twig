@@ -9,7 +9,7 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="page-header">
-                                <h2 class="pageheader-title">Transaction Requests </h2>
+                                <h2 class="pageheader-title">Withdrawal Requests </h2>
                                 <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
@@ -47,10 +47,8 @@
                                                         <th class="border-0">Name</th>
                                                         <th class="border-0">Amount</th>
                                                         <th class="border-0">status</th>
-                                                        <th class="border-0">Type</th>
                                                          <th class="border-0">Date</th> 
                                                          <th class="border-0">Action</th>
-                                                           <th class="border-0">Info</th>
                                                         
                                                     </tr>
                                                 </thead>
@@ -58,18 +56,17 @@
                                                    {% for withdrawal in withdrawals %}
                                                      <tr>
                                                     
-                                                        <td>{{withdrawal.user.firstname ~" "~ withdrawal.user.lastname}}</td>
+                                                        <td>{{withdrawal.user.name}}</td>
                                                         <td>${{withdrawal.amount}} </td>
                                                         <td>{{withdrawal.status}}</td>
-                                                        <td>{{withdrawal.type}}</td>
                                                         <form action="" method="post"> 
-                                                        <td><input type="date" name="date" ></td>
+                                                        {# <input type="date" name="date" > #}
+                                                        <td>{{withdrawal.createdat | date('D M d Y H:i')}}</td>
+                                                       
                                                         <td><input type="text" name="id" value="{{withdrawal.id}}" hidden> <input type="submit" class="btn btn-primary btn-lg btn-block" name="approve" value="approve"><input type="submit" name="delete" class="btn btn-primary btn-lg btn-block" value="Decline"></td>
                                                         </form>
                                                        <td>
-                                                       {% for key, value in withdrawal.data %}
-                                                        <p>{{key}} : {{value | join(', ')}}</p>
-                                                       {% endfor %}
+                                                       
                                                        </td>
                                                        
                                                     </tr>
