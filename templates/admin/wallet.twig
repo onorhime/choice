@@ -1,0 +1,110 @@
+{% include 'adminbase.html.twig' %}
+
+{% block main %}
+    <div class="dashboard-wrapper">
+            <div class="container-fluid  dashboard-content">
+                <!-- ============================================================== -->
+                <!-- pageheader -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="index.php" class="breadcrumb-link">Wallet</a></li>
+                                        <li class="breadcrumb-item"><a href="index.php" class="breadcrumb-link">Users</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page"></li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- end pageheader -->
+                <!-- ============================================================== -->
+             
+                    <div class="row">
+                        <!-- ============================================================== -->
+                        <!-- validation form -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Change Wallet Address</h5>
+                                <div class="card-body">
+                                    <form  method="post" action="">
+                                        <div class="row">
+                                            
+                                            
+                                            
+
+                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">Btc Wallet</label>
+                                                <input type="text" class="form-control" id="validationCustom01" name="btc" placeholder="Btc Wallet" value="{{wallet.btc}}" required>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">Eth Wallet</label>
+                                                <input type="text" class="form-control" id="validationCustom01" name="eth" placeholder="Eth Wallet" value="{{wallet.eth}}" required>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="validationCustom01">Usdt Wallet</label>
+                                                <input type="text" class="form-control" id="validationCustom01" name="usdt" placeholder="Usdt Wallet" value="{{wallet.usdt}}" required>
+                                                <div class="valid-feedback">
+                                                
+                                                </div>
+                                            </div>
+
+                                            
+                                            
+
+                                            
+
+
+                                           
+                                           
+                                           
+
+
+                                        
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <input type="submit" class="btn btn-primary" name="update"  value="Update Wallet">
+                                            </div>
+
+                                            
+                                        
+
+                                        </div>
+                                    </form>
+
+                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- end validation form -->
+                        <!-- ============================================================== -->
+                    </div>
+
+
+                 
+            </div>
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+           
+            <!-- ============================================================== -->
+            <!-- end footer -->
+            <!-- ============================================================== -->
+        </div>
+{% endblock %}
+        
+    

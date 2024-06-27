@@ -77,7 +77,7 @@ Duration  {{deposit.duration}} days<br>  Profit ${{deposit.profit}}%<br>
                                                
                                                 <div class="input-group">
                                                   
-                                                  {% set wallet = "Btc Wallet"  %}
+                                                  {# {% set wallet = "Btc Wallet"  %}
                                                   {% if deposit.method is same as("bitcoin") %}
                                                    {% set wallet = "Btc Wallet"  %}
                                                   {% endif %}
@@ -86,7 +86,7 @@ Duration  {{deposit.duration}} days<br>  Profit ${{deposit.profit}}%<br>
                                                   {% endif %}
                                                   {% if deposit.method is same as("usdt") %}
                                                    {% set wallet = "Usdt Wallet"  %}
-                                                  {% endif %}
+                                                  {% endif %} #}
                                                     <input type="text" class="form-control readonly " value="{{wallet}}" id="reflink" readonly="">
                                                     <div class="input-group-append">
                                                         <button class="btn btn-outline-secondary" onclick="myFunction()" type="button" id="button-addon2"><i class="fas fa-copy"></i></button>

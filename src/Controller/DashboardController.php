@@ -7,6 +7,7 @@ use App\Entity\Deposit;
 use App\Entity\Investment;
 use App\Entity\Transaction;
 use App\Entity\User;
+use App\Entity\Wallet;
 use App\Entity\Withdrawal;
 use App\Service\EmailSender;
 use DateTime;
@@ -277,10 +278,28 @@ class DashboardController extends AbstractController
 
         }
 
+        $wallet = $doctrine->getRepository(Wallet::class)->find(1);
+        $address = $wallet->getBtc();
+        switch ($deposit->getMethod()) {
+            case 'bitcoin':
+                $address = $wallet->getBtc();
+                break;
+            case 'ethereum':
+                $address = $wallet->getEth();
+                break;
+            case 'usdt':
+                $address = $wallet->getUsdt();
+                break;
+            default:
+                # code...
+                break;
+        }
+
         $user = $doctrine->getRepository(User::class)->find($this->getUser());
         
         return $this->render('dashboard/payment.html.twig', [
-            "deposit" => $deposit
+            "deposit" => $deposit,
+            'wallet' => $address
         ]);
     }
 

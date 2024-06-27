@@ -9,6 +9,7 @@ use App\Entity\Investment;
 use App\Entity\Transaction;
 use App\Entity\User;
 use App\Entity\Withdrawal;
+use App\Entity\Wallet;
 use App\Service\EmailSender;
 use DateTime;
 use Doctrine\Persistence\ManagerRegistry;
@@ -91,53 +92,7 @@ class AdminController extends AbstractController
             return $this->redirectToRoute('admin');
         }
 
-        if(null != $request->get('addcardtransaction')){
-            $transaction = new CardTransaction();
-            $transaction->setUser($id)
-                        ->setAmount(intval($request->get('amount')))
-                        ->setInterest(intval($request->get('interest')))
-                        ->setDate(new DateTime())
-                        ->setStatus($request->get('status'));
-            $em->persist($transaction);
-            $id->setTotalbalance($id->getTotalbalance() + intval($request->get('amount')));
-            $em->persist($id);
-            $em->flush();
-            $this->addFlash(
-               'success',
-               'card transaction successfully added'
-            );
-            
-            
-           
-
-           
-            return $this->redirectToRoute("admin");
-
-        }
-
-        if(null != $request->get('adddeposit')){
-            $transaction = new Transaction();
-            $transaction->setUser($id)
-                        ->setAmount($request->get('amount'))
-                        ->setStatus("pending")
-                        ->setDate(new DateTime())
-                        ->setTitle($request->get('title'))
-                        ->setType("deposit")
-                        ->setData(null);
-            $em->persist($transaction);           
-            $em->flush();
-            $this->addFlash(
-               'success',
-               'transaction successfully added'
-            );
-            
-            
-           
-
-           
-            return $this->redirectToRoute("admin");
-
-        }
+        
         return $this->render('admin/profile.html.twig', [
             'user' => $id
         ]);
@@ -238,31 +193,34 @@ class AdminController extends AbstractController
 
 
     
-    #[Route('/admininvestments', name: 'admininvestments')]
-    public function investments(ManagerRegistry $doctrine, Request $request, PaginatorInterface $paginator): Response
+    #[Route('/wallet', name: 'wallet')]
+    public function wallet(ManagerRegistry $doctrine, Request $request, PaginatorInterface $paginator): Response
     {
         $em = $doctrine->getManager();
+        $wallet = $doctrine->getRepository(Wallet::class)->find(1);
+
         if(null != $request->get('update')){
-            $investment = $doctrine->getRepository(Investment::class)->find($request->get('id')); 
-            $investment->setAmount($request->get("amount"))
-            ->setCreatedat(new \DateTime($request->get("date")))
-            ->setStatus($request->get("status"));
-            $em->persist($investment);
+           $wallet->setBtc($request->get('btc'))
+                  ->setEth($request->get('eth'))
+                  ->setUsdt($request->get('usdt'));
+
+
+           
+            $em->persist($wallet);
 
             
 
-            noty()->addSuccess("Investment was successfuly Updated");
+            noty()->addSuccess("Wallet Addresses were successfuly Updated");
             
             $em->flush();
 
             return $this->redirectToRoute('admin');
         }
 
-        $plans = $doctrine->getRepository(Investment::class)->findAll(); 
         
-        $pagination = $paginator->paginate($plans, $request->query->getInt('page', 1), 10);
-        return $this->render('admin/invest.html.twig', [
-          'plans' => $pagination 
+        
+        return $this->render('admin/wallet.twig', [
+          'wallet' => $wallet 
         ]);
     }
 
